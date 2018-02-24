@@ -100,7 +100,7 @@ void MinHeap<T>::BubbleDown(int i) {
 
 template<typename T>
 void MinHeap<T>::print() {
-	typedef HeapNode<T> heap_node
+	typedef HeapNode<T> heap_node;
 	vector<heap_node>::iterator it;
 	for (it = heap.begin(); it != heap.end(); it++) {
 		cout << (*it).data << " ";
