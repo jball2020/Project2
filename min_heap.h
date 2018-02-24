@@ -44,4 +44,6 @@ private:
   void BubbleDown(int i);
 };
 
+#include "min_heap.template"
+
 #endif
