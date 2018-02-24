@@ -29,7 +29,7 @@ T MinHeap<T>::extract_min() {
 		cout << "Empty Heap." << endl;
 	}
 	else {
-		int i = heap.size() - 1;
+		i = heap.size() - 1;
 		HeapNode<T> tmp = heap[0];
 		heap[0] = heap[i];
 		heap[i] = tmp;
@@ -148,7 +148,7 @@ int MinHeap<T>::Right(int i){
 
 template<typename T>
 bool MinHeap<T>::HasRight(int i){
-	if(Right(i) < heap.size()){
+	if(Right(i) < int(heap.size())){
 		return true;
 	} else {
 		return false;
@@ -157,7 +157,7 @@ bool MinHeap<T>::HasRight(int i){
 
 template<typename T>
 bool MinHeap<T>::HasLeft(int i){
-	if(Left(i) < heap.size()){
+	if(Left(i) < int(heap.size())){
 		return true;
 	} else {
 		return false;
