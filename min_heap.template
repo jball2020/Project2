@@ -155,7 +155,7 @@ bool MinHeap<T>::HasRight(int i){
 	}
 }
 
-<template<typename T>
+template<typename T>
 bool MinHeap<T>::HasLeft(int i){
 	if(Left(i) < heap.size()){
 		return true;
