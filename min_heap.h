@@ -1,3 +1,7 @@
+
+#ifndef MIN-HEAPH
+#def MIN-HEAPH
+
 #include <vector>
 using namespace std;
 
@@ -39,3 +43,5 @@ private:
   void BubbleUp(int i);
   void BubbleDown(int i);
 };
+
+#endif
