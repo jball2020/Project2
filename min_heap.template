@@ -48,7 +48,6 @@ T MinHeap<T>::peek() const {
 	else {
 		return heap[0].data;
 	}
-	return;
 }
 
 // Return: Size of the min heap.
