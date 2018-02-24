@@ -79,7 +79,7 @@ void MinHeap<T>::BubbleDown(int i) {
 	}
 	else {
 		int j = heap[2i].key;
-		int k = heap[2i + 1].key;]
+		int k = heap[2i + 1].key;
 		int min = min(j, k);
 		if (j == min) {
 			HeapNode<T> tmp = heap[2i];
@@ -100,7 +100,8 @@ void MinHeap<T>::BubbleDown(int i) {
 
 template<typename T>
 void MinHeap<T>::print() {
-	for (vector<T>::iterator it = heap.begin(); it != heap.end(); it++) {
+	vector<HeapNode<T>>::iterator it
+	for (it = heap.begin(); it != heap.end(); it++) {
 		cout << (*it).data << " ";
 	}
 }
