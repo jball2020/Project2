@@ -37,7 +37,7 @@ T MinHeap<T>::extract_min() {
 		T dat = heap[i].data;
 		heap.pop_back();
 
-		BubbleDown(1);
+		BubbleDown(0);
 
 		return dat;
 	}
