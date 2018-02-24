@@ -11,7 +11,7 @@ using namespace std;
 //             Use key to organize user data into min
 //             heap container.
 template <typename T>
-void MinHeap<T>::insert(const T data, const int key) {
+void MinHeap<T>::insert(const T data, const int key){
 	if (heap.empty()) {
 		heap.push_back(NULL);
 		heap.push_back(HeapNode<T>(data, key));
