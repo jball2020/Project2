@@ -9,7 +9,7 @@ using namespace std;
 //             Use key to organize user data into min
 //             heap container.
 template <typename T>
-void min_heap<T>::insert(const T data, const int key) {
+void MinHeap<T>::insert(const T data, const int key) {
 	if (heap.empty()) {
 		heap.push_back(NULL);
 		heap.push_back(HeapNode(data, key));
@@ -23,7 +23,7 @@ void min_heap<T>::insert(const T data, const int key) {
 
 // Return: User data stored in HeapNode with minimum key value.
 template <typename T>
-T min_heap<T>::extract_min() {
+T MinHeap<T>::extract_min() {
 	if (heap.empty()) {
 		cout << "Empty Heap." << endl;
 	}
@@ -40,7 +40,7 @@ T min_heap<T>::extract_min() {
 
 // Return: User data stored in HeapNode with minimum key value.
 template <typename T>
-T min_heap<T>::peek() const {
+T MinHeap<T>::peek() const {
 	if (heap.empty()) {
 		cout << "Empty Heap." << endl;
 	}
@@ -51,12 +51,12 @@ T min_heap<T>::peek() const {
 
 // Return: Size of the min heap.
 template <typename T>
-int min_heap<T>::size() const {
+int MinHeap<T>::size() const {
 	return heap.size();
 }
 
 template<typename T>
-void min_heap<T>::BubbleUp(int i) {
+void MinHeap<T>::BubbleUp(int i) {
 	if (heap[i / 2] == NULL || heap[i / 2].key >= heap[i].key) {
 		return; //base case
 	}
@@ -71,7 +71,7 @@ void min_heap<T>::BubbleUp(int i) {
 }
 
 template<typename T>
-void min_heap<T>::BubbleDown(int i) {
+void MinHeap<T>::BubbleDown(int i) {
 	if (heap[i].key < heap[2i].key && heap[i].key < heap[2i + 1].key) {
 		return;
 	}
@@ -97,7 +97,7 @@ void min_heap<T>::BubbleDown(int i) {
 }
 
 template<typename T>
-void min_heap<T>::print() {
+void MinHeap<T>::print() {
 	vector<T>::reverse_iterator it;
 	for (it = heap.begin(); it != heap.end(); it++) {
 		cout << (*it).data << " ";
