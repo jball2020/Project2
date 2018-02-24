@@ -1,6 +1,6 @@
 
-#ifndef MIN-HEAPH
-#def MIN-HEAPH
+#ifndef MINHEAPH
+#def MINHEAPH
 
 #include <vector>
 using namespace std;
