@@ -80,8 +80,8 @@ void MinHeap<T>::BubbleDown(int i) {
 	else {
 		int j = heap[2i].key;
 		int k = heap[2i + 1].key;
-		int min = min(j, k);
-		if (j == min) {
+		int min_key = min(j, k);
+		if (j == min_key) {
 			HeapNode<T> tmp = heap[2i];
 			heap[2i] = heap[i];
 			heap[i] = tmp;
