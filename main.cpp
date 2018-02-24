@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
 	heap.insert(5, 3);
 
 	int i = heap.peek();
-	cout << "min:" << i.data << i.key << endl;
+	cout << "min:" << i << endl;
 
 	heap.print();
 
