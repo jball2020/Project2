@@ -47,7 +47,7 @@ T MinHeap<T>::peek() const {
 		cout << "Empty Heap." << endl;
 	}
 	else {
-		return heap[1];
+		return heap[1].data;
 	}
 }
 
