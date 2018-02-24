@@ -42,6 +42,9 @@ private:
 
   void BubbleUp(int i);
   void BubbleDown(int i);
+  int Right(int i);
+  int Parent(int i);
+  int Left(int i);
 };
 
 #include "min_heap.template"

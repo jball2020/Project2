@@ -62,41 +62,41 @@ int MinHeap<T>::size() const {
 
 template<typename T>
 void MinHeap<T>::BubbleUp(int i) {
-	if (i == 0 || heap[(i-1) / 2].key <= heap[i].key) {
+	if (i == 0 || heap[Parent(i)].key <= heap[i].key) {
 		return; //base case
 	}
 	else {
 		HeapNode<T> tmp = heap[i]; //swap
-		heap[i] = heap[(i-1) / 2];
-		heap[(i-1) / 2] = tmp;
-		i = i / 2;
+		heap[i] = heap[Parent(i)];
+		heap[Parent(i)] = tmp;
 
-		BubbleUp(i); //recursive call
+		BubbleUp(Parent(i)); //recursive call
 	}
 }
 
 template<typename T>
 void MinHeap<T>::BubbleDown(int i) {
-	if (heap[i].key < heap[(2i+1)].key && heap[i].key < heap[(2i+2)].key) {
+	if (heap[i].key < heap[Left(i)].key && heap[i].key < heap[Right(i)].key) {
 		return;
 	}
 	else {
-		int j = heap[(2i+1)].key;
-		int k = heap[(2i) + +2].key;
+		int j = heap[Left(i)].key;
+		int k = heap[Right(i)].key;
 		int min_key = min(j, k);
 		if (j == min_key) {
-			HeapNode<T> tmp = heap[(2i+1)];
-			heap[(2i+1)] = heap[i];
+			HeapNode<T> tmp = heap[Left(i)];
+			heap[Left(i)] = heap[i];
 			heap[i] = tmp;
 
-			BubbleDown((2i+1));
+
+			BubbleDown(Left(i));
 		}
 		else {
-			HeapNode<T> tmp = heap[(2i+2)];
-			heap[(2i+2)] = heap[i];
+			HeapNode<T> tmp = heap[Right(i)];
+			heap[Right(i)] = heap[i];
 			heap[i] = tmp;
 
-			BubbleDown((2i+2));
+			BubbleDown(Right(i));
 		}
 	}
 }
@@ -107,4 +107,23 @@ void MinHeap<T>::print() {
 	for (it = heap.begin(); it != heap.end(); it++) {
 		cout << (*it).data << " ";
 	}
+}
+
+
+template<typenam T>
+int MinHeap<T>::Left(int i){
+	int l = (2*i)+1;
+	return l;
+}
+
+template<typenam T>
+int MinHeap<T>::Parent(int i){
+	int p = (i+1) / 2;
+	return p;
+}
+
+template<typenam T>
+int MinHeap<T>::Right(int i){
+	int r = (2*i)+2;
+	return r;
 }
