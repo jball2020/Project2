@@ -13,6 +13,7 @@ using namespace std;
 template <typename T>
 void MinHeap<T>::insert(const T data, const int key){
 	if (heap.empty()) {
+		heap.resize(2);
 		heap[1] = HeapNode<T>(data, key);
 	}
 	else {
