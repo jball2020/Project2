@@ -14,7 +14,6 @@ template <typename T>
 void MinHeap<T>::insert(const T data, const int key){
 	if (heap.empty()) {
 		heap.push_back(HeapNode<T>(data, key));
-		heap.push_back(HeapNode<T>(data, key));
 	}
 	else {
 		heap.push_back(HeapNode<T>(data, key));
@@ -47,8 +46,9 @@ T MinHeap<T>::peek() const {
 		cout << "Empty Heap." << endl;
 	}
 	else {
-		return heap[1].data;
+		return heap[0].data;
 	}
+	return;
 }
 
 // Return: Size of the min heap.
@@ -59,13 +59,13 @@ int MinHeap<T>::size() const {
 
 template<typename T>
 void MinHeap<T>::BubbleUp(int i) {
-	if (i == 0 || heap[i / 2].key >= heap[i].key) {
+	if (i == 0 || heap[(i-1) / 2].key <= heap[i].key) {
 		return; //base case
 	}
 	else {
 		HeapNode<T> tmp = heap[i]; //swap
-		heap[i] = heap[i / 2];
-		heap[i / 2] = tmp;
+		heap[i] = heap[(i-1) / 2];
+		heap[(i-1) / 2] = tmp;
 		i = i / 2;
 
 		BubbleUp(i); //recursive call
