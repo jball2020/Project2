@@ -16,8 +16,8 @@ struct HeapNode {
 template <typename T>
 class MinHeap {
 public:
-  MinHeap() {}
-  ~MinHeap() {}
+  MinHeap(){}
+  ~MinHeap(){}
 
   // Input: 
   //      data - User data.
