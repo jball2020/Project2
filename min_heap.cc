@@ -12,7 +12,7 @@
 template <typename T>
 void MinHeap<T>::insert(const T data, const int key){
 	if (heap.empty()) {
-		heap.push_back(NULL);
+		heap.push_back(0);
 		heap.push_back(HeapNode<T>(data, key));
 	}
 	else {
@@ -58,7 +58,7 @@ int MinHeap<T>::size() const {
 
 template<typename T>
 void MinHeap<T>::BubbleUp(int i) {
-	if (heap[i / 2] == NULL || heap[i / 2].key >= heap[i].key) {
+	if (i == 0 || heap[i / 2].key >= heap[i].key) {
 		return; //base case
 	}
 	else {
