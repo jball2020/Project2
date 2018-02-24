@@ -1,5 +1,7 @@
 #include "min_heap.h"
 #include <algorithm>
+#include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -12,7 +14,7 @@ template <typename T>
 void MinHeap<T>::insert(const T data, const int key) {
 	if (heap.empty()) {
 		heap.push_back(NULL);
-		heap.push_back(HeapNode(data, key));
+		heap.push_back(HeapNode<T>(data, key));
 	}
 	else {
 		heap.push_back(HeapNode<T>(data, key));
