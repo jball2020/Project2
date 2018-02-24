@@ -29,7 +29,7 @@ T MinHeap<T>::extract_min() {
 		cout << "Empty Heap." << endl;
 	}
 	else {
-		i = heap.size() - 1;
+		int i = heap.size() - 1;
 		HeapNode<T> tmp = heap[0];
 		heap[0] = heap[i];
 		heap[i] = tmp;
