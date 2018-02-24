@@ -24,7 +24,6 @@ public:
   //      key  - Key value associated with user data.
   //             Use key to organize user data into min
   //             heap container.
-  template <typename T>
   void insert(const T data, const int key);
 
   // Return: User data stored in HeapNode with minimum key value.
