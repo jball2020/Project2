@@ -15,4 +15,5 @@ int main(int argc, char** argv) {
 
 	heap.print();
 
+	return(0);
 }
