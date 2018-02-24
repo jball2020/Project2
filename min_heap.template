@@ -33,9 +33,13 @@ T MinHeap<T>::extract_min() {
 		HeapNode<T> tmp = heap[1];
 		heap[1] = heap[i];
 		heap[i] = tmp;
+
+		T dat = heap[i].data;
 		heap.pop_back();
 
 		BubbleDown(1);
+
+		return dat;
 	}
 }
 
