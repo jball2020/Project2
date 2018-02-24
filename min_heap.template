@@ -77,26 +77,26 @@ void MinHeap<T>::BubbleUp(int i) {
 
 template<typename T>
 void MinHeap<T>::BubbleDown(int i) {
-	if (heap[i].key < heap[2i+1].key && heap[i].key < heap[2i + 2].key) {
+	if (heap[i].key < heap[(2i)+1].key && heap[i].key < heap[(2i) + 2].key) {
 		return;
 	}
 	else {
-		int j = heap[2i+1].key;
-		int k = heap[2i + +2].key;
+		int j = heap[(2i)+1].key;
+		int k = heap[(2i) + +2].key;
 		int min_key = min(j, k);
 		if (j == min_key) {
-			HeapNode<T> tmp = heap[2i+1];
-			heap[2i+1] = heap[i];
+			HeapNode<T> tmp = heap[(2i)+1];
+			heap[(2i)+1] = heap[i];
 			heap[i] = tmp;
 
-			BubbleDown(2i+1);
+			BubbleDown((2i)+1);
 		}
 		else {
-			HeapNode<T> tmp = heap[2i+2];
-			heap[2i+2] = heap[i];
+			HeapNode<T> tmp = heap[(2i)+2];
+			heap[(2i)+2] = heap[i];
 			heap[i] = tmp;
 
-			BubbleDown(2i + 2);
+			BubbleDown((2i) + 2);
 		}
 	}
 }
