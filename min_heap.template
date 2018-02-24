@@ -110,19 +110,19 @@ void MinHeap<T>::print() {
 }
 
 
-template<typenam T>
+template<typename T>
 int MinHeap<T>::Left(int i){
 	int l = (2*i)+1;
 	return l;
 }
 
-template<typenam T>
+template<typename T>
 int MinHeap<T>::Parent(int i){
 	int p = (i+1) / 2;
 	return p;
 }
 
-template<typenam T>
+template<typename T>
 int MinHeap<T>::Right(int i){
 	int r = (2*i)+2;
 	return r;
