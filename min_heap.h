@@ -45,6 +45,8 @@ private:
   int Right(int i);
   int Parent(int i);
   int Left(int i);
+  bool HasRight(int i);
+  bool HasLeft(int i);
 };
 
 #include "min_heap.template"
