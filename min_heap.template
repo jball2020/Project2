@@ -103,7 +103,7 @@ void MinHeap<T>::BubbleDown(int i) {
 			HeapNode<T> tmp = heap[Left(i)];
 			heap[Left(i)] = heap[i];
 			heap[i] = tmp;
-			BubbleDown(Left(i))
+			BubbleDown(Left(i));
 		}
 	} else if(HasRight(i) && !HasLeft(i)){
 		if(heap[i].key < heap[Right(i)].key){
