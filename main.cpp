@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
 	heap.insert(4, 2);
 	heap.insert(5, 3);
 
-	HeapNode<int> i = heap.peek();
+	int i = heap.peek();
 	cout << "min:" << i.data << i.key << endl;
 
 	heap.print();
