@@ -77,7 +77,7 @@ void MinHeap<T>::BubbleUp(int i) {
 template<typename T>
 void MinHeap<T>::BubbleDown(int i) {
 	if(HasLeft(i) && HasRight(i)){
-		if(heap[i].key < heap[Left(i)].key && heap[i].key < heap[Right(i)].key){
+		if(heap[i].key <= heap[Left(i)].key && heap[i].key <= heap[Right(i)].key){
 			return;
 		} else if(heap[Left(i)].key == heap[Right(i)].key) {
 			HeapNode<T> tmp = heap[Left(i)];
