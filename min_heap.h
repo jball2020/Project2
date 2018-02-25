@@ -1,4 +1,12 @@
-
+/*
+* Author: Jordan Ball
+* Assignment: Project 2
+* Class: CS3610
+* Date: 2/25/2018
+*
+* Description: MinHeap class that is templated to be used with any data type
+*
+*/
 #ifndef MINHEAPH
 #define MINHEAPH
 
@@ -35,17 +43,25 @@ public:
   // Return: Size of the min heap.
   int size() const;
 
+  //print function to help debugging
   void print();
 
 private:
   vector<HeapNode<T> > heap;
 
+  //carries out the bubble up procedure when inserting
   void BubbleUp(int i);
+  //carries out the bubble down procedure when extracting
   void BubbleDown(int i);
+  //returns the index of the right child of i
   int Right(int i);
+  //returns the index of the parent of i
   int Parent(int i);
+  //returns the index of the left child of i
   int Left(int i);
+  //returns true if i has a right child
   bool HasRight(int i);
+  //returns true if i has a left child
   bool HasLeft(int i);
 };
 

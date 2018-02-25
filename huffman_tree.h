@@ -1,3 +1,13 @@
+/*
+* Author: Jordan Ball
+* Assignment: Project 2
+* Class: CS3610
+* Date: 2/25/2018
+*
+* Description: HuffmanTree class used to compress messages
+*
+*/
+
 #ifndef HUFFMAN_TREE_H
 #define HUFFMAN_TREE_H
 

@@ -1,3 +1,13 @@
+/*
+* Author: Jordan Ball
+* Assignment: Project 2
+* Class: CS3610
+* Date: 2/25/2018
+*
+* Description: MinHeap class that is templated to be used with any data type
+*
+*/
+
 #include <iostream>
 #include <string>
 #include "huffman_tree.h"

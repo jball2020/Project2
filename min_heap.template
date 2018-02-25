@@ -1,3 +1,13 @@
+/*
+* Author: Jordan Ball
+* Assignment: Project 2
+* Class: CS3610
+* Date: 2/25/2018
+*
+* Description: MinHeap class that is templated to be used with any data type
+*
+*/
+
 #include "min_heap.h"
 #include <algorithm>
 #include <cstdlib>
@@ -74,6 +84,7 @@ void MinHeap<T>::BubbleUp(int i) {
 	}
 }
 
+//swaps the node at i with the greater child if present
 template<typename T>
 void MinHeap<T>::BubbleDown(int i) {
 	if(HasLeft(i) && HasRight(i)){
@@ -124,6 +135,7 @@ void MinHeap<T>::BubbleDown(int i) {
 	} 
 }
 
+//print function to help with debugging
 template<typename T>
 void MinHeap<T>::print() {
 	typename vector< HeapNode<T> >::iterator it;
