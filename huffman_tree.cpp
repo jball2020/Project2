@@ -106,7 +106,6 @@ void HuffmanTree::print() const { // need to implement this function
 	string msg = this->message;
 	string code;
 	map<char, string> codes;
-	string encoded_message;
 
 	buildCodes(this->root, code, codes);
 
@@ -114,10 +113,8 @@ void HuffmanTree::print() const { // need to implement this function
 	char ch;
 	for (it = msg.begin(); it != msg.end(); it++) {
 		ch = *it;
-		encoded_message.append(codes.find(ch)->second);
+		cout << codes.find(ch)->second) << " " << endl;
 	}
-
-	cout << encoded_message << endl;
 	
 
   // Print the Huffman encoding of this->message.
