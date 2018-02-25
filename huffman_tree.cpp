@@ -144,5 +144,8 @@ void HuffmanTree::buildCodes(const HuffmanNode* current, string &code, map<char,
 	if (current->right == NULL && current->left == NULL) {
 		codes.insert(pair<char, string>(current->character, code));
 	}
-	code.erase(code.size() - 1);
+	if (!code.empty()) {
+		code.erase(code.size() - 1);
+	}
+	
 }
