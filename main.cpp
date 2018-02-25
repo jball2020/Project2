@@ -10,6 +10,7 @@ int main(int argc, char** argv) {
 
 	int num_cases;
 	cin >> num_cases;
+	cin.ignore();
 	string message = "";
 	for (int i = 1; i <= num_cases; i++) {
 		HuffmanTree mytree;
