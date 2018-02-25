@@ -10,10 +10,10 @@ int main(int argc, char** argv) {
 
 	int num_cases;
 	cin >> num_cases;
-	string message;
+	string message = "";
 	for (int i = 1; i <= num_cases; i++) {
 		HuffmanTree mytree;
-		getline(cin, message);
+		getline(cin, message, '\n');
 		mytree.construct(message);
 		cout << "Test Case : " << i << endl;
 		mytree.print();

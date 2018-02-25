@@ -101,7 +101,8 @@ void HuffmanTree::construct(const string message) {
 }
 
 
-void HuffmanTree::print() const {   // need to implement this function 
+void HuffmanTree::print() const { // need to implement this function
+
 	string msg = this->message;
 	string code;
 	map<char, string> codes;
