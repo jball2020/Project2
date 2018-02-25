@@ -19,6 +19,7 @@ int main(int argc, char** argv) {
 		cout << "Test Case : " << i << endl;
 		mytree.print();
 		cout << endl;
+		mytree.destruct();
 	}
 
 }
