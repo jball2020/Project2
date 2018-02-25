@@ -38,7 +38,7 @@ private:
 
   HuffmanNode *root;
   string message;
-  void buildCodes(const HuffmanNode* root, string &code, map<char, string> &codes);
+  void buildCodes(const HuffmanNode* current, string &code, map<char, string> &codes) const;
 };
 
 #endif

@@ -107,8 +107,7 @@ void HuffmanTree::print() const {   // need to implement this function
 	map<char, string> codes;
 	string encoded_message;
 
-	HuffmanNode* start_root = this->root;
-	buildCodes(start_root, code, codes);
+	buildCodes(this->root, code, codes);
 
 	string::iterator it;
 	char ch;
@@ -132,17 +131,17 @@ void HuffmanTree::print() const {   // need to implement this function
 }
 
 
-void HuffmanTree::buildCodes(const HuffmanNode* root, string &code, map<char, string> &codes) {
-	if (root->left) {
+void HuffmanTree::buildCodes(const HuffmanNode* current, string &code, map<char, string> &codes) const{
+	if (current->left) {
 		code.push_back('0');
-		buildCodes(root->left, code, codes);
+		buildCodes(current->left, code, codes);
 	}
-	if (root->right) {
+	if (current->right) {
 		code.push_back('1');
-		buildCodes(root->right, code, codes);
+		buildCodes(current->right, code, codes);
 	}
-	if (root->right == NULL && root->left == NULL) {
-		codes.insert(pair<char, string>(root->character, code));
+	if (current->right == NULL && current->left == NULL) {
+		codes.insert(pair<char, string>(current->character, code));
 	}
 	code.erase(code.size() - 1);
 }
