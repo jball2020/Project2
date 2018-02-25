@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "huffman_tree.h"
 #include "min_heap.h"
 using namespace std;
@@ -110,7 +111,7 @@ void HuffmanTree::print() const {   // need to implement this function
 
 	string::iterator it;
 	char ch;
-	for (it = msg.begin; it != msg.end(); it++) {
+	for (it = msg.begin(); it != msg.end(); it++) {
 		ch = *it;
 		encoded_message.append(codes.find(ch)->second);
 	}
@@ -140,7 +141,7 @@ void HuffmanTree::buildCodes(HuffmanNode* root, string &code, map<char, string> 
 		buildCodes(root->right, code, codes);
 	}
 	if (root->right == NULL && root->left == NULL) {
-		codes.insert(pair<char, string>(root->data, code));
+		codes.insert(pair<char, string>(root->character, code));
 	}
 	code.pop_back();
 }

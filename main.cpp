@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
 		HuffmanTree mytree;
 		getline(cin, message);
 		mytree.construct(message);
-		cout << "Test Case : " << i << endl
+		cout << "Test Case : " << i << endl;
 		mytree.print();
 		cout << endl;
 	}
