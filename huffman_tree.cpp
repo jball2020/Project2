@@ -113,7 +113,7 @@ void HuffmanTree::print() const { // need to implement this function
 	char ch;
 	for (it = msg.begin(); it != msg.end(); it++) {
 		ch = *it;
-		cout << (codes.find(ch))->second << " " << endl;
+		cout << (codes.find(ch))->second << " ";
 	}
 	
 
