@@ -98,7 +98,6 @@ void HuffmanTree::construct(const string message) {
 
   // Get root of huffman tree. e.g. {*:11}
   this->root = heap.peek();
-  heap.print();
 }
 
 
