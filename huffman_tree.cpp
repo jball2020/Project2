@@ -100,7 +100,24 @@ void HuffmanTree::construct(const string message) {
 }
 
 
-void HuffmanTree::print() const {
+void HuffmanTree::print() const {   // need to implement this function 
+	string msg = this->message;
+	string code;
+	map<char, string> codes;
+	string encoded_message;
+
+	buildCodes(this->root, code, codes);
+
+	string::iterator it;
+	char ch;
+	for (it = msg.begin; it != msg.end(); it++) {
+		ch = *it;
+		encoded_message.append(codes.find(ch)->second);
+	}
+
+	cout << encoded_message << endl;
+	
+
   // Print the Huffman encoding of this->message.
   // Append 0 to a character's encoding if moving left in Huffman tree.
   // Append 1 to a character's encoding if moving right in Huffman tree.
@@ -109,4 +126,21 @@ void HuffmanTree::print() const {
   // character searches from there.
 
   // Also, feel free to add a print helper function.
+
+}
+
+
+void HuffmanTree::buildCodes(HuffmanNode* root, string &code, map<char, string> &codes) {
+	if (root->left) {
+		code.push_back('0');
+		buildCodes(root->left, code, codes);
+	}
+	if (root->right) {
+		code.push_back('1');
+		buildCodes(root->right, code, codes);
+	}
+	if (root->right == NULL && root->left == NULL) {
+		codes.insert(pair<char, string>(root->data, code));
+	}
+	code.pop_back();
 }

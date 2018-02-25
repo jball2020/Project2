@@ -2,6 +2,7 @@
 #define HUFFMAN_TREE_H
 
 #include <string>
+#include <map>
 using namespace std;
 
 struct HuffmanNode {
@@ -34,8 +35,10 @@ public:
   void print() const;
 
 private:
+
   HuffmanNode *root;
   string message;
+  void buildCodes(HuffmanNode* root, string &code, map<char, string> &codes);
 };
 
 #endif
