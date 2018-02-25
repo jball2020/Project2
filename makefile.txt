@@ -3,10 +3,10 @@
 main: main.o huffman_tree.o
 	g++ main.o huffman_tree.o -o main
 
-main.o: main.cc
+main.o: main.cc huffman_tree.cpp huffman_tree.h min_heap.h min_heap.template
 	g++ -c -Wall main.cc
 
-game.o: huffman_tree.cpp huffman_tree.h min_heap.h min_heap.template
+huffman_tree.o: huffman_tree.cpp huffman_tree.h min_heap.h min_heap.template
 	g++ -c -Wall huffman_tree.cpp
 
 clean:
