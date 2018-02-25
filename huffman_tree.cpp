@@ -131,7 +131,7 @@ void HuffmanTree::print() const {   // need to implement this function
 }
 
 
-void HuffmanTree::buildCodes(HuffmanNode* root, string &code, map<char, string> &codes) {
+void HuffmanTree::buildCodes(const HuffmanNode* root, string &code, map<char, string> &codes) {
 	if (root->left) {
 		code.push_back('0');
 		buildCodes(root->left, code, codes);
