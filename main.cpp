@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "huffman_tree.h"
 using namespace std;
 
@@ -10,9 +11,9 @@ int main(int argc, char** argv) {
 	int num_cases;
 	cin >> num_cases;
 	string message;
-	for (int i = 0; i < num_cases; i++) {
+	for (int i = 1; i <= num_cases; i++) {
 		HuffmanTree mytree;
-		message = cin.getline();
+		getline(cin, message);
 		mytree.construct(message);
 		cout << "Test Case : " << i << endl;
 		mytree.print();
