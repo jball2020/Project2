@@ -84,7 +84,9 @@ void HuffmanTree::construct(const string message) {
     HuffmanNode *left, *right;
 
     left = heap.extract_min();
+	cout << "Min1: " << left->character << " " << left->frequency << endl;
     right = heap.extract_min();
+	cout << "Min2: " << right->character << " " << right->frequency << endl;
 
     HuffmanNode *parent = new HuffmanNode(
       left->frequency + right->frequency
