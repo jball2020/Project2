@@ -27,6 +27,8 @@ void MinHeap<T>::insert(const T data, const int key){
 	}
 	else {
 		heap.push_back(HeapNode<T>(data, key));
+		print();
+		cout << endl;
 		int pos = heap.size() - 1;
 		BubbleUp(pos);
 	}
