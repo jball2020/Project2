@@ -19,6 +19,7 @@ int main(int argc, char** argv) {
 	string i = heap.peek();
 	cout << "min:" << i << endl;
 
+	/*
 	heap.print();
 	cout << endl;
 
@@ -27,7 +28,7 @@ int main(int argc, char** argv) {
 
 	heap.print();
 	cout << endl;
-
+	*/
 
 	return(0);
 }
