@@ -17,10 +17,10 @@ using namespace std;
 void HuffmanTree::construct(const string message) {
   this->message = message;
 
-  // Count the frequency of each letter in message
+  /* Count the frequency of each letter in message
   // e.g. 
   //    message == "aaabbccccdd"
-  //    frequencies == {a:3, b:2, c:4, d:2} 
+  */    frequencies == {a:3, b:2, c:4, d:2} 
   map<char, int> frequency_map;
   for (int i = 0; i < message.length(); ++i) {
     if (frequency_map.find(message[i]) != frequency_map.end())
@@ -29,7 +29,7 @@ void HuffmanTree::construct(const string message) {
       frequency_map[message[i]] = 1;
   }
 
-  // Create HuffmanNode for each unique letter in message
+  /* Create HuffmanNode for each unique letter in message
   // and organize nodes into a min heap
   // e.g.
   //  heap == 
@@ -37,7 +37,7 @@ void HuffmanTree::construct(const string message) {
   //           /     \
   //        {d:2}   {a:3}
   //        /   \   /    \
-  //      {c:4} 
+  */      {c:4} 
   MinHeap<HuffmanNode*> heap;
   map<char, int>::iterator it = frequency_map.begin();
   for (; it != frequency_map.end(); ++it) {
@@ -45,13 +45,11 @@ void HuffmanTree::construct(const string message) {
       it->first, it->second
     );
     heap.insert(node, it->second);
-	heap.print();
-	cout << endl;
   }
 
   
   
-  // Combine nodes with smallest frequency and insert
+  /* Combine nodes with smallest frequency and insert
   // back into heap until heap size == 1. Along the way,
   // create binary tree out of combined nodes.
   // e.g.
@@ -93,7 +91,7 @@ void HuffmanTree::construct(const string message) {
   //                       /    \
   //                    {b:2}  {d:2}
   //
-  //     heap == {*:11}
+  */     heap == {*:11}
   while (heap.size() > 1) {
     HuffmanNode *left, *right;
 
