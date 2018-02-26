@@ -9,12 +9,12 @@ int main(int argc, char** argv) {
   // HuffmanTree construct function. Next, print the encoded message.
   // Finally, destruct the huffman tree and move on to the next test case.
 	MinHeap<string> heap;
-	heap.insert("Hello,", 1);
-	heap.insert("my", 2);
-	heap.insert("name", 3);
-	heap.insert("is", 4);
-	heap.insert("Jordan", 5);
-	heap.insert("Ball", 6);
+	//heap.insert("Hello,", 1);
+	//heap.insert("my", 2);
+	//heap.insert("name", 3);
+	//heap.insert("is", 4);
+	//heap.insert("Jordan", 5);
+	//heap.insert("Ball", 6);
 
 	string i = heap.peek();
 	cout << "min:" << i << endl;

@@ -56,12 +56,19 @@ T MinHeap<T>::extract_min() {
 // Return: User data stored in HeapNode with minimum key value.
 template <typename T>
 T MinHeap<T>::peek() const {
-	if (heap.empty()) {
-		cout << "Empty Heap." << endl;
-	}
-	else {
+	try{
 		return heap[0].data;
+		throw(12);
 	}
+	catch(int 12){
+		cout << "Error: Possible empty heap" << endl;
+	}
+//	if (heap.empty()) {
+//		cout << "Empty Heap." << endl;
+//	}
+//	else {
+//		return heap[0].data;
+//	}
 }
 
 // Return: Size of the min heap.
