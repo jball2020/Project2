@@ -41,7 +41,7 @@ T MinHeap<T>::extract_min() {
 	}
 	else {
 		int i = heap.size() - 1;
-		HeapNode<T> tmp = heap[0];
+		HeapNode<T> tmp = heap[0];  //ADD SWAP FUNCTION
 		heap[0] = heap[i];
 		heap[i] = tmp;
 
@@ -78,7 +78,7 @@ void MinHeap<T>::BubbleUp(int i) {
 		return; //base case
 	}
 	else {
-		HeapNode<T> tmp = heap[i]; //swap
+		HeapNode<T> tmp = heap[i];       //ADD SWAP FUNCTION
 		heap[i] = heap[Parent(i)];
 		heap[Parent(i)] = tmp;
 
@@ -93,7 +93,7 @@ void MinHeap<T>::BubbleDown(int i) {
 		if(heap[i].key <= heap[Left(i)].key && heap[i].key <= heap[Right(i)].key){
 			return;
 		} else if(heap[Left(i)].key == heap[Right(i)].key) {
-			HeapNode<T> tmp = heap[Left(i)];
+			HeapNode<T> tmp = heap[Left(i)];     //ADD SWAP FUNCTION
 			heap[Left(i)] = heap[i];
 			heap[i] = tmp;
 			BubbleDown(Left(i));
@@ -102,13 +102,13 @@ void MinHeap<T>::BubbleDown(int i) {
 			int k = heap[Right(i)].key;
 			int min_key = min(j, k);
 			if (j == min_key) {
-				HeapNode<T> tmp = heap[Left(i)];
+				HeapNode<T> tmp = heap[Left(i)];     //ADD SWAP FUNCTION
 				heap[Left(i)] = heap[i];
 				heap[i] = tmp;
 				BubbleDown(Left(i));
 			}
 			else {
-				HeapNode<T> tmp = heap[Right(i)];
+				HeapNode<T> tmp = heap[Right(i)];    //ADD SWAP FUNCTION
 				heap[Right(i)] = heap[i];
 				heap[i] = tmp;
 				BubbleDown(Right(i));
@@ -118,7 +118,7 @@ void MinHeap<T>::BubbleDown(int i) {
 		if(heap[i].key <= heap[Left(i)].key){
 			return;		
 		} else {
-			HeapNode<T> tmp = heap[Left(i)];
+			HeapNode<T> tmp = heap[Left(i)];    //ADD SWAP FUNCTION
 			heap[Left(i)] = heap[i];
 			heap[i] = tmp;
 			BubbleDown(Left(i));
@@ -127,7 +127,7 @@ void MinHeap<T>::BubbleDown(int i) {
 		if(heap[i].key <= heap[Right(i)].key){
 			return;		
 		} else {
-			HeapNode<T> tmp = heap[Right(i)];
+			HeapNode<T> tmp = heap[Right(i)];     //ADD SWAP FUNCTION
 			heap[Right(i)] = heap[i];
 			heap[i] = tmp;
 			BubbleDown(Right(i));
