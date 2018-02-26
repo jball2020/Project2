@@ -154,7 +154,7 @@ int MinHeap<T>::Left(int i){
 
 template<typename T>
 int MinHeap<T>::Parent(int i){
-	int p = (i+1) / 2;
+	int p = (i-1) / 2;
 	return p;
 }
 
