@@ -47,6 +47,8 @@ void HuffmanTree::construct(const string message) {
     heap.insert(node, it->second);
   }
 
+  heap.print();
+  
   // Combine nodes with smallest frequency and insert
   // back into heap until heap size == 1. Along the way,
   // create binary tree out of combined nodes.

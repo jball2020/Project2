@@ -140,7 +140,8 @@ template<typename T>
 void MinHeap<T>::print() {
 	typename vector< HeapNode<T> >::iterator it;
 	for (it = heap.begin(); it != heap.end(); it++) {
-		cout << (*it).data << " ";
+		// cout << (*it).data << " ";
+		cout << it->data->character << " ";
 	}
 }
 
