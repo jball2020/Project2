@@ -44,7 +44,7 @@ public:
   int size() const;
 
   //print function to help debugging
-  void print();
+  //void print();
 
 private:
   vector<HeapNode<T> > heap;

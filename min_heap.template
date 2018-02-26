@@ -143,6 +143,8 @@ void MinHeap<T>::BubbleDown(int i) {
 }
 
 //print function to help with debugging
+/*
+
 template<typename T>
 void MinHeap<T>::print() {
 	typename vector< HeapNode<T> >::iterator it;
@@ -151,6 +153,7 @@ void MinHeap<T>::print() {
 		cout << it->data->character << " ";
 	}
 }
+*/
 
 
 template<typename T>
