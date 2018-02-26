@@ -46,6 +46,7 @@ void HuffmanTree::construct(const string message) {
     );
     heap.insert(node, it->second);
 	heap.print();
+	cout << endl;
   }
 
   
