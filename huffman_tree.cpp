@@ -23,7 +23,7 @@ void HuffmanTree::construct(const string message) {
   //    frequencies == {a:3, b:2, c:4, d:2} 
   */
   map<char, int> frequency_map;
-  for (int i = 0; i < message.length(); ++i) {
+  for (unsigned int i = 0; i < message.length(); ++i) {
     if (frequency_map.find(message[i]) != frequency_map.end())
       ++frequency_map[message[i]];
     else
