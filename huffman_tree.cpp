@@ -20,7 +20,8 @@ void HuffmanTree::construct(const string message) {
   /* Count the frequency of each letter in message
   // e.g. 
   //    message == "aaabbccccdd"
-  */    frequencies == {a:3, b:2, c:4, d:2} 
+  //    frequencies == {a:3, b:2, c:4, d:2} 
+  */
   map<char, int> frequency_map;
   for (int i = 0; i < message.length(); ++i) {
     if (frequency_map.find(message[i]) != frequency_map.end())
@@ -37,7 +38,8 @@ void HuffmanTree::construct(const string message) {
   //           /     \
   //        {d:2}   {a:3}
   //        /   \   /    \
-  */      {c:4} 
+  //      {c:4} 
+  */
   MinHeap<HuffmanNode*> heap;
   map<char, int>::iterator it = frequency_map.begin();
   for (; it != frequency_map.end(); ++it) {
@@ -91,7 +93,8 @@ void HuffmanTree::construct(const string message) {
   //                       /    \
   //                    {b:2}  {d:2}
   //
-  */     heap == {*:11}
+  //     heap == {*:11}
+  */
   while (heap.size() > 1) {
     HuffmanNode *left, *right;
 
