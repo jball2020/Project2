@@ -113,7 +113,7 @@ int MinHeap<T>::size() const {
 
 //swaps the node at i with the greater child if present
 template<typename T>
-int MinHeap<T>::BubbleDown(int i) {
+void MinHeap<T>::BubbleDown(int i) {
 	if(HasLeft(i) && HasRight(i)){
 		if(heap[i].key <= heap[Left(i)].key && heap[i].key <= heap[Right(i)].key){
 			return;
