@@ -42,9 +42,6 @@ T MinHeap<T>::extract_min() {
 	else {
 		int i = heap.size() - 1;
 		swap(heap[0], heap[i]);
-		//HeapNode<T> tmp = heap[0];  //ADD SWAP FUNCTION
-		//heap[0] = heap[i];
-		//heap[i] = tmp;
 
 		T dat = heap[i].data;
 		heap.pop_back();
@@ -79,9 +76,10 @@ void MinHeap<T>::BubbleUp(int i) {
 		return; //base case
 	}
 	else {
-		HeapNode<T> tmp = heap[i];       //ADD SWAP FUNCTION
-		heap[i] = heap[Parent(i)];
-		heap[Parent(i)] = tmp;
+		swap(heap[i], heap[Parent(i)]);
+		//HeapNode<T> tmp = heap[i];       //ADD SWAP FUNCTION
+		//heap[i] = heap[Parent(i)];
+		//heap[Parent(i)] = tmp;
 
 		BubbleUp(Parent(i)); //recursive call
 	}
