@@ -32,8 +32,6 @@ void MinHeap<T>::insert(const T data, const int key){
 			swap(heap[i], heap[Parent(i)]);
 			i = Parent(i);
 		}
-
-		//BubbleUp(pos);
 	}
 }
 
@@ -73,17 +71,6 @@ T MinHeap<T>::peek() const {
 template <typename T>
 int MinHeap<T>::size() const {
 	return heap.size();
-}
-
-template<typename T>
-void MinHeap<T>::BubbleUp(int i) {
-	if (i == 0 || heap[Parent(i)].key <= heap[i].key) {
-		return; //base case
-	}
-	else {
-		swap(heap[i], heap[Parent(i)]);
-		BubbleUp(Parent(i)); //recursive call
-	}
 }
 
 //swaps the node at i with the greater child if present
