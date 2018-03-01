@@ -48,8 +48,6 @@ public:
 
 private:
   vector<HeapNode<T> > heap;
-  //carries out the bubble down procedure when extracting
-  void BubbleDown(int i);
   //returns the index of the right child of i
   int Right(int i);
   //returns the index of the parent of i
