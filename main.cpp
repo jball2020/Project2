@@ -8,6 +8,20 @@
 *
 */
 
+/*
+Time Complexity of Building HuffmanTree:
+	With MinHeap:
+		-A minheap takes log n time to insert
+		-if we have n characters, we have 2n-1 nodes in the huffman tree
+		-Thus, building a HuffmanTree with a MinHeap = O(nlog(n))
+	W/o MinHeap:
+		-Searching for min element will take n^2 time
+		-if we have n characters, we have 2n-1 nodes in the huffman tree
+		-inserting into huffman tree will take log n
+		-Thus, building a HuffmanTree without a MinHeap = o(n^2log(n))
+
+*/
+
 #include <iostream>
 #include <string>
 #include "huffman_tree.h"
