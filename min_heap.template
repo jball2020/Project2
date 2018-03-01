@@ -28,7 +28,7 @@ void MinHeap<T>::insert(const T data, const int key){
 	else {
 		heap.push_back(HeapNode<T>(data, key));
 		int i = heap.size() - 1;
-		while(i != 0 || heap[Parent(i)] > heap[i]){
+		while(i != 0 || heap[Parent(i)].key > heap[i].key){
 			swap(heap[i], heap[Parent(i)]);
 			i--;
 		}
