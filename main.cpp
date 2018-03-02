@@ -15,10 +15,10 @@ Time Complexity of Building HuffmanTree:
 		-if we have n characters, we have 2n-1 nodes in the huffman tree
 		-Thus, building a HuffmanTree with a MinHeap = O(nlog(n))
 	W/o MinHeap:
-		-Searching for min element will take n^2 time
+		-Searching for min element in the array will take n time
 		-if we have n characters, we have 2n-1 nodes in the huffman tree
-		-inserting into huffman tree will take log n
-		-Thus, building a HuffmanTree without a MinHeap = o(n^2log(n))
+		-inserting grouped nodes back into the array for grouping will take n time
+		-Thus, building a HuffmanTree without a MinHeap = O(n^2)
 
 */
 

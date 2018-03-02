@@ -15,47 +15,68 @@
 
 using namespace std;
 
-// Input: 
-//      data - User data.
-//      key  - Key value associated with user data.
-//             Use key to organize user data into min
-//             heap container.
+
+/**
+* @brief Insersts a new node into a heap
+* @param data - User data.
+* @param key  - Key value associated with user data.
+*				Use key to organize user data into min
+*				heap container.
+*
+* Adds a new node to the end of the heap and then bubbles it up
+* until it is in the right position. This algorithm stops when
+* the key value of the parent is less than or equal to the key value
+* of the inserted node
+*
+* @return Void
+*/     
 template <typename T>
 void MinHeap<T>::insert(const T data, const int key){
-	if (heap.empty()) {
+	if (heap.empty()) { //if heap is empty add new node
 		heap.push_back(HeapNode<T>(data, key));
 	}
 	else {
-		heap.push_back(HeapNode<T>(data, key));
-		int i = heap.size() - 1;
-		while(i != 0 && heap[Parent(i)].key > heap[i].key){
-			swap(heap[i], heap[Parent(i)]);
-			i = Parent(i);
+		heap.push_back(HeapNode<T>(data, key)); //add a new node
+		int i = heap.size() - 1; //find position of last element
+		while(i != 0 && heap[Parent(i)].key > heap[i].key){ //as long as i is not 0 and the parent of i is greater than i
+			swap(heap[i], heap[Parent(i)]); //swap
+			i = Parent(i); //update i
 		}
 	}
 }
 
-// Return: User data stored in HeapNode with minimum key value.
+
+/**
+* @brief Extracts the min from the top of the heap and bubbles down the item that replaces it
+* @param None
+*
+* Swaps the last item in the heap with the first item in the heap (min) then deletes the min.
+* Then it bubbles the node at the top down to it's correct position. This algorithm stops bubbling down
+* when the child(ren) of the node that is bubbling down are greater than or equal to the node, or if the moving node,
+* in it's current position, has no child(ren)
+*
+* @return User data stored in HeapNode with minimum key value.
+*/ 
 template <typename T>
 T MinHeap<T>::extract_min() {
-	if (heap.empty()) {
+	if (heap.empty()) { //if the heap is empty stop
 		cerr << "Empty Heap\n";
 		exit(EXIT_FAILURE);
 	}
 	else {
-		int last = heap.size() - 1;
-		swap(heap[0], heap[last]);
-		T dat = heap[last].data;
-		heap.pop_back();
-		int i = 0;
+		int last = heap.size() - 1; //get last postion
+		swap(heap[0], heap[last]); //swap min with last
+		T dat = heap[last].data; //store min
+		heap.pop_back(); //delete min
+		int i = 0; //start at 0
 		while(HasLeft(i) || HasRight(i)){
-			if(HasLeft(i) && HasRight(i)){
+			if(HasLeft(i) && HasRight(i)){ /if it has left and right, then we need to check if they are equal, otherwise swap with smallest
 				if(heap[i].key <= heap[Left(i)].key && heap[i].key <= heap[Right(i)].key){
 					break;
 				} else if(heap[Left(i)].key == heap[Right(i)].key) {
 					swap(heap[i], heap[Left(i)]);
 					i = Left(i);
-				} else {
+				} else { //swap with smallest
 					int j = heap[Left(i)].key;
 					int k = heap[Right(i)].key;
 					int min_key = min(j, k);
@@ -68,21 +89,21 @@ T MinHeap<T>::extract_min() {
 						i = Right(i);
 					}
 				}
-			} else if(HasLeft(i) && !HasRight(i)){
+			} else if(HasLeft(i) && !HasRight(i)){ //only has one child, swap with it
 				if(heap[i].key <= heap[Left(i)].key){
 					break;		
 				} else {
 					swap(heap[i], heap[Left(i)]);
 					i = Left(i);
 				}
-			} else if(HasRight(i) && !HasLeft(i)){
+			} else if(HasRight(i) && !HasLeft(i)){ //only has right child, swap with it
 				if(heap[i].key <= heap[Right(i)].key){
 					break;		
 				} else {
 					swap(heap[i], heap[Right(i)]);
 					i = Right(i);
 				}
-			} else {
+			} else { //no children, stop
 				break;
 			} 
 		}
@@ -90,7 +111,12 @@ T MinHeap<T>::extract_min() {
 	}
 }
 
-// Return: User data stored in HeapNode with minimum key value.
+/**
+* @brief This function simply returns the minimum element in the heap
+* @param none
+*
+* @return User data stored in HeapNode with minimum key value.
+*/
 template <typename T>
 T MinHeap<T>::peek() const {
 	if (heap.empty()) {
@@ -102,44 +128,64 @@ T MinHeap<T>::peek() const {
 	}
 }
 
-// Return: Size of the min heap.
+
+/**
+* @brief This function simply returns the size of the heap
+* @param none
+*
+* @return int size of the heap
+*/
 template <typename T>
 int MinHeap<T>::size() const {
 	return heap.size();
 }
 
-//print function to help with debugging
-/*
 
-template<typename T>
-void MinHeap<T>::print() {
-	typename vector< HeapNode<T> >::iterator it;
-	for (it = heap.begin(); it != heap.end(); it++) {
-		// cout << (*it).data << " ";
-		cout << it->data->character << " ";
-	}
-}
+/**
+* @brief Function that takes an index i and returns the index that is the left child of i
+* @param int i, an index of a vector
+*
+* @return int l, the left child of i
 */
-
-
 template<typename T>
 int MinHeap<T>::Left(int i){
 	int l = (2*i)+1;
 	return l;
 }
 
+
+/**
+* @brief Function that takes an index i and returns the index that is the parent of i
+* @param int i, an index of a vector
+*
+* @return int p, the parent of i
+*/
 template<typename T>
 int MinHeap<T>::Parent(int i){
 	int p = (i-1) / 2;
 	return p;
 }
 
+
+/**
+* @brief Function that takes an index i and returns the index that is the right child of i
+* @param int i, an index of a vector
+*
+* @return int r, the right child of i
+*/
 template<typename T>
 int MinHeap<T>::Right(int i){
 	int r = (2*i)+2;
 	return r;
 }
 
+
+/**
+* @brief Function that returns true if index i of a vector has a right child and false otherwise
+* @param int i, an index of a vecotr
+*
+* @return bool, true if i has right child, false if not
+*/
 template<typename T>
 bool MinHeap<T>::HasRight(int i){
 	if(Right(i) < int(heap.size())){
@@ -149,6 +195,13 @@ bool MinHeap<T>::HasRight(int i){
 	}
 }
 
+
+/**
+* @brief Function that returns true if index i of a vector has a left child and false otherwise
+* @param int i, an index of a vecotr
+*
+* @return bool, true if i has left child, false if not
+*/
 template<typename T>
 bool MinHeap<T>::HasLeft(int i){
 	if(Left(i) < int(heap.size())){
