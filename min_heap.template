@@ -70,7 +70,7 @@ T MinHeap<T>::extract_min() {
 		heap.pop_back(); //delete min
 		int i = 0; //start at 0
 		while(HasLeft(i) || HasRight(i)){
-			if(HasLeft(i) && HasRight(i)){ /if it has left and right, then we need to check if they are equal, otherwise swap with smallest
+			if(HasLeft(i) && HasRight(i)){ //if it has left and right, then we need to check if they are equal, otherwise swap with smallest
 				if(heap[i].key <= heap[Left(i)].key && heap[i].key <= heap[Right(i)].key){
 					break;
 				} else if(heap[Left(i)].key == heap[Right(i)].key) {
